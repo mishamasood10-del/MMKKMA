@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>For my cute little baby😘</title>
+
+<!-- fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+
+<style>
+body{
+    margin:0;
+    overflow:hidden;
+    background:#fff7f9;
+}
+
+/* ---------- SLIDES ---------- */
+.slide{
+    height:100vh;
+    width:100vw;
+    display:none;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    padding:30px;
+    text-align:center;
+}
+.active{display:flex;}
+
+/* soft pastel gradients */
+.p1{background:linear-gradient(135deg,#fff1f5,#ffe5ec);}
+.p2{background:linear-gradient(135deg,#fef6ff,#f3e8ff);}
+.p3{background:linear-gradient(135deg,#fff8e7,#ffe4b5);}
+.p4{background:linear-gradient(135deg,#eafaf1,#d4f4dd);}
+.p5{background:linear-gradient(135deg,#fcefee,#f8dcdc);}
+
+/* fonts */
+.heading{
+    font-family:"Great Vibes", cursive;
+    font-size:42px;
+    color:#8b3a62;
+}
+
+.msg{
+    font-family:"Times New Roman", serif;
+    font-size:20px;
+    color:#3b3b3b;
+    max-width:320px;
+    margin-top:15px;
+}
+
+/* buttons */
+button{
+    padding:12px 24px;
+    border-radius:25px;
+    border:none;
+    font-weight:bold;
+    background:#ff6b81;
+    color:white;
+    margin:10px;
+}
+
+/* ---------- CHARACTER + BUBBLE ---------- */
+.characterWrap{
+    position:relative;
+    margin-top:20px;
+}
+
+.character{
+    width:130px;
+}
+
+.bubble{
+    position:absolute;
+    left:110%;
+    top:20%;
+    background:white;
+    color:black;
+    padding:10px 14px;
+    border-radius:12px;
+    font-size:14px;
+    display:none;
+}
+
+/* ---------- CONFETTI ---------- */
+.confetti{
+    position:fixed;
+    width:10px;
+    height:10px;
+    animation:fall 3s linear infinite;
+}
+@keyframes fall{
+    from{transform:translateY(-10vh) rotate(0deg);}
+    to{transform:translateY(100vh) rotate(360deg);}
+}
+
+/* runaway button */
+#no{position:absolute;}
+</style>
+</head>
+
+<body>
+
+<!-- ---------- 0 WELCOME ---------- -->
+<div class="slide active p1">
+    <h1 class="heading">For my cute little baby😘</h1>
+    <button onclick="next()">Open</button>
+</div>
+
+
+<!-- ---------- 1 VALENTINE QUESTION ---------- -->
+<div class="slide p2">
+    <h2 class="heading">Will you be my Valentine?</h2>
+
+    <button onclick="next()">Yes</button>
+    <button id="no">No</button>
+
+    <div class="characterWrap">
+        <!-- REPLACE THIS IMAGE WITH YOUR CHARACTER -->
+        <img src="girl.png" class="character">
+        <div class="bubble" id="bubble">How dare you say no, huh?😤</div>
+    </div>
+</div>
+
+
+<!-- ---------- 2 CELEBRATION ---------- -->
+<div class="slide p3">
+    <h1 class="heading">YAYAYAYAY</h1>
+    <button onclick="next()">Continue</button>
+</div>
+
+
+<!-- ---------- DAY TEMPLATE FUNCTION ---------- -->
+<script>
+const days=[
+  "Happy Rose Day My Love 🌹",
+  "Happy Proposal Day Cutuuu💍",
+  "Happy Chocolate Day Babyy🍫",
+  "Happy Teddy Day 🧸",
+  "Happy Promise Day Jaan",
+  "Happy Hug Day 🤗",
+  "Happy Kiss Day 😘",
+  "Happy Valentine’s Day Mera Bachaaaw ❤️"
+];
+
+const messages=[
+  "Happy Rose Day to the person who fills my life with colour. I loveee uuu soooo muchhh cutuuuu.... Even though I'm the one wishing youuuu, Shadi k baad to apne hi dilwane hain phool aur gajre😝😋",
+  "Happy Proposal Day Babyy. I can't wait for the day we make it official and show the world that we made it... I can't wait to tell our children that we fell in love young and naive and fought the world for our love🥰",
+  "Happy Chocolate Day to the person who looks more like vanilla icecream😋... and I'd definitely choose Vanilla nd strawberry over choclate anytimee..iykyk😝",
+  "Happy Teddy Day to my life size teddy who I'm gonna cuddle for eternityyy😜",
+  "Happy Promise Day to my little babyyy... I promise to Love you for an eternity.... I promise to stand by your side no matter what, through health and sickness and through hardship and ease, I promise to always support you meri jaan❤",
+  "Happy Hug Day to the person who I'm going to hugg everydayyy after we're married... and cuddle every chance I get... and cling to like a koala bear😋",
+  "Happy Kiss Day Darling. Sending you a million kisses across the miles cz I can't give you real ones yettt😭... Be ready tho... these million kisses will be very real soon nd there's no way ur going to escape them😝",
+  "Happy Valentines Day Mera Bacha💞 I can’t believe it’s only been a month of us being together because it already feels like you’ve been a part of my life forever. I feel so lucky and grateful to have someone like you. You’re honestly the best partner I could’ve asked for and you're literally perfect. In this generation of disloyal men and emotionally unavailable weirdos, you’re such a rare gem. I love you despite everything and I’ll never ever ever leave you. I just want you to know that today, and every day, you mean the world to me 💕"
+];
+
+for(let i=0; i<days.length; i++){
+  document.write(`
+    <div class="slide p4">
+      <h2 class="heading">${days[i]}</h2>
+      <button onclick="openWish(this)">Open</button>
+    </div>
+    <div class="slide p5">
+      <p class="msg">${messages[i]}</p>
+      <button onclick="prev()">Back</button>
+      <button onclick="next()">Continue</button>
+    </div>
+  `);
+}
+</script>
+
+<div class="slide p20">
+<p class="msg">I LOVEEE UUUU SOOOO MUCHHHHH❤</p>
+</div>
+`);
+});
+</script>
+
+<script>
+let slides=document.querySelectorAll(".slide");
+let current=0;
+
+function show(n){
+    slides[current].classList.remove("active");
+    current=n;
+    slides[current].classList.add("active");
+
+    if(current===2) startConfetti();
+}
+
+function next(){show(current+1);}
+function prev(){show(current-1);}
+
+/* open -> go to next */
+function openWish(btn){ next(); }
+
+/* runaway NO */
+let no=document.getElementById("no");
+let bubble=document.getElementById("bubble");
+
+no.addEventListener("mouseover",()=>{
+    no.style.left=Math.random()*70+"vw";
+    no.style.top=Math.random()*70+"vh";
+    bubble.style.display="block";
+});
+
+/* real confetti burst */
+function startConfetti(){
+    for(let i=0;i<80;i++){
+        let c=document.createElement("div");
+        c.className="confetti";
+        c.style.left=Math.random()*100+"vw";
+        c.style.background=`hsl(${Math.random()*360},80%,60%)`;
+        document.body.appendChild(c);
+        setTimeout(()=>c.remove(),3000);
+    }
+}
+</script>
+
+</body>
+</html>
